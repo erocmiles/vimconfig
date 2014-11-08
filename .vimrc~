@@ -1,4 +1,3 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 scriptencoding utf-8
 set encoding=utf-8
@@ -28,4 +27,7 @@ if has('win32')
     set backupdir=~/vimfiles/backup
 endif
 set fileformats=unix,dos
+set t_Co=256
+set term=screen-256color
 syntax on
+colorscheme kolor
