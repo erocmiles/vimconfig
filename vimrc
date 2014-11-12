@@ -19,16 +19,20 @@ set list
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 if !has('win32')
+  silent execute '!mkdir "~/backup" > /dev/null 2>&1'
+  silent execute '!mkdir "~/swap" > /dev/null 2>&1'
   let g:netrw_ftp_cmd="ftp -p"
   set backupdir=~/.vim/backup
   set directory=~/.vim/swap
-  silent execute '!rm "~/vimfiles/swap/*"'
+  silent execute '!rm "~/swap/*" > /dev/null 2>&1'
 endif
 
 if has('win32')
-    set backupdir=~/vimfiles/backup
-    set directory=~/vimfiles/swap
-    silent execute '!del "~/vimfiles/swap/*"'
+    silent execute '!mkdir "~/backup"'
+    silent execute '!mkdir "~/swap"'
+    set backupdir=~/backup
+    set directory=~/swap
+    silent execute '!del "~/swap/*"'
 endif
 set fileformats=unix,dos
 set nobackup
