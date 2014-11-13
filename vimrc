@@ -30,12 +30,12 @@ if !has('win32')
 endif
 
 if has('win32')
-    silent execute '!mkdir "~/backup"'
-    silent execute '!mkdir "~/swap"'
-    set backupdir=~/backup
-    set directory=~/swap
-    set undodir=~/backup " where to save undo histories
-    silent execute '!del "~/swap/*"'
+    silent execute '!mkdir "'.$HOME.'/backup"'
+    silent execute '!mkdir "'.$HOME.'/swap"'
+    set backupdir=$HOME/backup
+    set directory=$HOME/swap
+    set undodir=$HOME/backup " where to save undo histories
+    silent execute '!del "'.$HOME.'/swap/*"'
 endif
 set fileformats=unix,dos
 set nobackup
