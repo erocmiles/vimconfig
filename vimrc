@@ -41,7 +41,7 @@ set fileformats=unix,dos
 set nobackup
 set nowritebackup
 if has('gui_running')
-  set guifont=Consolas:h10
+  set guifont=Monaco\ 10
 endif
 nmap ; :
 set undofile                " Save undo's after file closes
